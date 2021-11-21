@@ -3,7 +3,7 @@
 This React POC is an SPA to test reading speed and accuracy. Actually written in German, project is to integrate i18n.
 
 ## Usage
-Go to this page [https://matbgn.github.io/reading_speed_and_accuracy/](https://matbgn.github.io/reading_speed_and_accuracy/), enter the reader name and date and put the proof text with the new button.
+Go to this page [https://matbgn.github.io/reading-speed-and-accuracy/](https://matbgn.github.io/reading-speed-and-accuracy/), enter the reader name and date and put the proof text with the new button.
 
 <table border="0">
   <tr>
