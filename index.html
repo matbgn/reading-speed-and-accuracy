@@ -241,17 +241,7 @@
         handleTextInput(e) {
             this.setState(() => {
                 const rawValue = e.target.value
-                const textInArr = rawValue
-                    .replaceAll('. ', '. <br>')
-                    .replaceAll(".'", ".' <br>")
-                    .replaceAll('." ', '." <br>')
-                    .replaceAll('! ', '! <br>')
-                    .replaceAll("!'", "!' <br>")
-                    .replaceAll('!" ', '!" <br>')
-                    .replaceAll('? ', '? <br>')
-                    .replaceAll("?'", "?' <br>")
-                    .replaceAll('?" ', '?" <br>')
-                    .match(/\S+/gm)
+                const textInArr = rawValue.match(/\S+/gm)
 
                 for (let i = 0; i < textInArr.length; i++) {
                     textInArr[i] = `<span id="${i}" onclick = "if (document.getElementById('${i}').style.color == 'red') {
@@ -281,6 +271,17 @@
                     }
                 }
                 let result = tmpRes
+                                   .replaceAll('."', '."<br>')
+                                   .replaceAll(".'", ".'<br>")
+                                   .replaceAll(". ", ".<br>")
+                                   .replaceAll('.</span>', '.</span><br>')
+                                   .replaceAll('!"', '!"<br>')
+                                   .replaceAll("!'", "!'<br>")
+                                   .replaceAll('! ', '!<br>')
+                                   .replaceAll("?'", "?'<br>")
+                                   .replaceAll('?"', '?"<br>')
+                                   .replaceAll('? ', '?<br>')
+                                   .replaceAll(/<br>(<\/span><sup>.*<\/sup>)/gm, (string) => `${string.substring(4)}<br>`)
                 this.props.onWordsNumberChange((tenthCounter - 1) * 10 + textInArr.length % 10)
                 this.props.onLongWordsNumberChange(rawValue.match(/\S+/gm).map(el => el.replace(/[\.!?:;,"]/gm, '')).filter(el => el.length > 6).length)
                 this.props.onSentencesNumberChange(rawValue.match(/[A-Z].*?[\.!?]/gm) ? rawValue.match(/[A-Z].*?[\.!?]/gm).length : 1)
