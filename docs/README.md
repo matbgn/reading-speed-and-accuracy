@@ -13,3 +13,10 @@ Go to this page [https://matbgn.github.io/reading-speed-and-accuracy/](https://m
 </table>
 
 Start a timer for 1 minute and click on every word misspelled. Finally, double-click on the last word read to mark it as green and automatically compute the result and analysis.
+
+<table border="0">
+  <tr>
+    <td>:note:</td>
+    <td>Text indicator level is based on <a href="https://en.wikipedia.org/wiki/Lix_(readability_test)">Björnsson, C. H. (1968) formula</a>, more infos on <a href="https://www.psychometrica.de/lix.html">https://www.psychometrica.de/lix.html</a></td>
+  </tr>
+</table>

@@ -57,7 +57,7 @@
                     </div>
                     <div>
                         Leseindex
-                        : {lix/* <input type="number" size="1"/> <a href="https://www.psychometrica.de/lix.html" className="href" target="_blank">Calculator</a>*/}
+                        : {lix}
                     </div>
                 </div>
             )
@@ -243,9 +243,14 @@
                 const rawValue = e.target.value
                 const textInArr = rawValue
                     .replaceAll('. ', '. <br>')
+                    .replaceAll(".'", ".' <br>")
                     .replaceAll('." ', '." <br>')
                     .replaceAll('! ', '! <br>')
+                    .replaceAll("!'", "!' <br>")
+                    .replaceAll('!" ', '!" <br>')
                     .replaceAll('? ', '? <br>')
+                    .replaceAll("?'", "?' <br>")
+                    .replaceAll('?" ', '?" <br>')
                     .match(/\S+/gm)
 
                 for (let i = 0; i < textInArr.length; i++) {
